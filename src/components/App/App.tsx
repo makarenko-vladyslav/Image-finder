@@ -73,8 +73,12 @@ export default function App() {
     };
 
     function handleModal(imageUrl: string): void {
-        setModal(!modal);
+        setModal(true);
         setModalImage(imageUrl);
+    }
+
+    function handleToggleModal(): void {
+        setModal(false);
     }
 
     function toggleNightMode(): void {
@@ -112,7 +116,7 @@ export default function App() {
 
                     <ImageModal
                         isOpen={modal}
-                        toggleModal={handleModal}
+                        toggleModal={handleToggleModal}
                         imageUrl={modalImage}
                     ></ImageModal>
                 </>

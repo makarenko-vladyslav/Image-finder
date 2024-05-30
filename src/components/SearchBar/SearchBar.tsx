@@ -11,7 +11,7 @@ type SearchBarProps = {
     toggleNightMode: () => void;
 };
 
-export default function SearchBar(props: SearchBarProps) {
+const SearchBar = (props: SearchBarProps) => {
     const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
 
@@ -64,4 +64,8 @@ export default function SearchBar(props: SearchBarProps) {
             </header>
         </>
     );
-}
+};
+
+SearchBar.displayName = "SearchBar";
+
+export default SearchBar;

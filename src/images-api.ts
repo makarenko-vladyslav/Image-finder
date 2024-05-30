@@ -4,28 +4,25 @@ const KEY: string = "I8M3Tskhexos2hlxxS2fNs3Zp93TK6TN6fzmKp6vzbE";
 
 axios.defaults.baseURL = `https://api.unsplash.com/search/photos`;
 
-interface IImgInfo {
-    query: string;
-    page: number;
-    per_page: number;
-    client_id: string;
-    orientation: string;
-}
-
-export default interface IResponse {
-    results: {
-        id: string;
-        alt_description: string;
-        urls: {
+export type Image = {
+    urls: {
+        small: string;
+        regular: string;
+    };
+    alt_description: string;
+    user: {
+        profile_image: {
             small: string;
         };
-        user: {
-            profile_image: {
-                small: string;
-            };
-            name: string;
-        };
-    }[];
+        name: string;
+        instagram_username: string;
+    };
+    likes: number;
+    created_at: string;
+};
+export default interface IResponse {
+    results: Image[];
+    total_pages: number;
 }
 
 export const fetchImages = async (

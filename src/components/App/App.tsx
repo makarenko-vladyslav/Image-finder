@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { fetchImages } from "../../images-api";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn.tsx";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import SearchBar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
@@ -22,7 +22,7 @@ export default function App() {
     const [shouldFetch, setShouldFetch] = useState<boolean>(false);
     const [nightMode, setNightMode] = useState<boolean>(true);
 
-    const firstNewImageRef = useRef<HTMLDivElement>(null);
+    const firstNewImageRef = useRef<HTMLLIElement>(null);
 
     useEffect(() => {
         firstNewImageRef.current &&

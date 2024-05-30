@@ -5,6 +5,7 @@ const KEY: string = "I8M3Tskhexos2hlxxS2fNs3Zp93TK6TN6fzmKp6vzbE";
 axios.defaults.baseURL = `https://api.unsplash.com/search/photos`;
 
 export type Image = {
+    id: string;
     urls: {
         small: string;
         regular: string;
@@ -20,7 +21,7 @@ export type Image = {
     likes: number;
     created_at: string;
 };
-export default interface IResponse {
+export interface IResponse {
     results: Image[];
     total_pages: number;
 }

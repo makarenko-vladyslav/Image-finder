@@ -3,55 +3,65 @@ import toast, { Toaster } from "react-hot-toast";
 import { IoSearch } from "react-icons/io5";
 
 import css from "./SearchBar.module.css";
+import { FormEvent } from "react";
 
-export default function SearchBar({ onSubmit, nightMode, toggleNightMode }) {
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+type SearchBarProps = {
+    onSubmit: (newTopic: string) => void;
+    nightMode: boolean;
+    toggleNightMode: () => void;
+};
 
-    const form = evt.target;
-    const topic = form.elements.topic.value;
+export default function SearchBar(props: SearchBarProps) {
+    const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+        evt.preventDefault();
 
-    !topic.trim()
-      ? toast.error("Your should to enter text for image search!")
-      : onSubmit(topic);
+        const form = evt.target as HTMLFormElement;
+        const topic = (form.elements.namedItem("topic") as HTMLInputElement).value;
 
-    form.reset();
-  };
+        !topic.trim()
+            ? toast.error("Your should to enter text for image search!")
+            : props.onSubmit(topic);
 
-  return (
-    <>
-      <header className={css.header}>
-        <NightMode nightMode={nightMode} toggleNightMode={toggleNightMode} />
+        form.reset();
+    };
 
-        <form className={css.form} onSubmit={handleSubmit}>
-          <div className={css.inputWrapper}>
-            <input
-              className={css.input}
-              type="text"
-              autoComplete="off"
-              autoFocus
-              placeholder="Search images and photos"
-              name="topic"
-            />
+    return (
+        <>
+            <header className={css.header}>
+                <NightMode
+                    nightMode={props.nightMode}
+                    toggleNightMode={props.toggleNightMode}
+                />
 
-            <button className={css.btn} type="submit">
-              <IoSearch />
-            </button>
-          </div>
-        </form>
-        <Toaster
-          position="top-right"
-          reverseOrder={false}
-          toastOptions={{
-            duration: "400",
-            style: {
-              border: "1px solid #ff4800",
-              padding: "16px",
-              color: "#ff4800",
-            },
-          }}
-        />
-      </header>
-    </>
-  );
+                <form className={css.form} onSubmit={handleSubmit}>
+                    <div className={css.inputWrapper}>
+                        <input
+                            className={css.input}
+                            type="text"
+                            autoComplete="off"
+                            autoFocus
+                            placeholder="Search images and photos"
+                            name="topic"
+                        />
+
+                        <button className={css.btn} type="submit">
+                            <IoSearch />
+                        </button>
+                    </div>
+                </form>
+                <Toaster
+                    position="top-right"
+                    reverseOrder={false}
+                    toastOptions={{
+                        duration: 400,
+                        style: {
+                            border: "1px solid #ff4800",
+                            padding: "16px",
+                            color: "#ff4800",
+                        },
+                    }}
+                />
+            </header>
+        </>
+    );
 }

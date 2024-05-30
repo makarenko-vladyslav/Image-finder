@@ -1,0 +1,79 @@
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+
+  &:hover {
+    cursor: zoom-in;
+  }
+}
+
+.authorInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+.authorPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.autorInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.autor {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+
+  width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imgInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+.instagram {
+  color: rgb(255, 44, 149);
+
+  transition: transform 100ms linear;
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}

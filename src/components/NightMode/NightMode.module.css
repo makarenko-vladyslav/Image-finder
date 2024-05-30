@@ -1,0 +1,91 @@
+.wrapperLight {
+  position: relative;
+  width: 55px;
+  height: 35px;
+
+  background-color: #f6f6f6;
+
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), 0 0 3px rgba(0, 0, 0, 0.1) inset;
+  cursor: pointer;
+}
+
+.wrapperDark {
+  position: relative;
+  width: 55px;
+  height: 35px;
+
+  border-radius: 20px;
+  background: #494949;
+  box-shadow: rgb(29, 29, 29) 6px rgba(0, 0, 0, 0.5),
+    -4px -4px -8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.circleLight {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: transparent;
+  background: #fff;
+
+  padding: 0px;
+  margin: 0;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.05),
+    -4px -4px 6px rgba(0, 0, 0, 0.05) inset;
+  transition: transform 250ms ease-in;
+  transform: translate(10%, 14%);
+
+  overflow: hidden;
+}
+
+.circleDark {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: transparent;
+  background: #2c2c2f;
+
+  padding: 0px;
+  margin: 0;
+
+  background: #2c2c2f;
+  transition: transform 250ms ease-in;
+
+  box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5), 2px 2px 3px rgba(0, 0, 0, 0.05);
+
+  transform: translate(75%, 9%);
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.sun {
+  color: #ffd600;
+  opacity: 1;
+}
+
+.moon {
+  color: #2c2c2f;
+  rotate: 260deg;
+  opacity: 1;
+  fill: #f6f6f6;
+}
+
+/* 
+input[type="checkbox"]:checked + .nightmode label {
+  background: #494949;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5) inset;
+}
+
+input[type="checkbox"]:checked + .nightmode label .circle {
+  left: 100%;
+  transform: translate(-110%, -50%);
+  background: #2c2c2f;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5),
+    -3px -3px 6px rgba(0, 0, 0, 0.5) inset;
+}
+ */
